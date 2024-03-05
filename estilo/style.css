@@ -1,0 +1,227 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src:  url(/fonts/IDroid.otf) format('opentype');
+    font-weight: normal;
+}
+
+
+:root{
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque:'Bebas Neue', sans-serif, 'cursive';
+    --fonte-android: 'Android', 'cursive';
+
+}
+
+/*ISSO E UMA CONFIGURAÇÃO GLOBAL, AS MARGENS ESTAVAM NOS ATRAPALHANDO
+ENTAO ZERAMOS MARGIN E PADDING PARA PODERMOS CONFIGURAR DEPOIS */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+body{
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after{ /* esses dois pontos é pra colocarmos alfo depois do link*/
+    content: '\1F517';
+
+
+}
+
+
+header{
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)); /*linear para baixo da cor 3 para a cor 5 */
+    min-height: 150px;
+    text-align: center;
+    padding-top: 30px; /* para nao ficar grudado meu titulo na margem de cima */
+}
+
+header > h1 {
+    color:rgb(255, 255, 255);
+    font-family: var(--fonte-destaque); 
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 20px; /* espaço a baixo do titulo*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.753);
+    
+}
+
+header> p {
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    color: white;
+    max-width: 500px; /* para ficar responsivo e nao quebrar*/
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.753);
+    margin-bottom: 20px;
+
+}
+
+nav{
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.829);
+}
+
+nav > a {
+    color: var(--cor1);
+    padding: 10px; /* separou os menus entre eles*/
+    text-decoration: none; /*tirar o sublinhado*/
+    font-weight: bold;
+    border-radius: 5px; /*este border radius poderiamos colocar no hover tambem que funcionaria*/
+    transition-duration: 0.5s; /*quando passar o mouse em cima ele vai ter meio  0.5 segundo de transição */
+
+}
+/* quando eu passar o mouse no link que esta em nav*/
+nav a:hover{
+    background-color: var(--cor3);
+    color: var(--cor5); /*mudamos a cor da letra e do background */
+    
+
+}
+
+main{
+    background-color: white;
+    min-width: 300px;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 30px; /*criamos um espaço pra fora la em baixo*/
+    padding: 20px; /*COLOCAMOS O PADDING PARA DESENCOSTAR AS LETRAS DA MARGEM DO MAIN - espaço pra dentro*/
+    box-shadow: 0px 0px 10px black; /* nao temos deslocamento da sombra nem horizontal nem vertical, somente espalhamento */
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+
+
+main h1 { /*A FONTE ANDROID NAO ESTAVA PEGANDO PORQUE EU NAO ESTAVA COLOCANDO O ARTICLE/main AQUI!!!!!!*/
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+}
+
+main h2{
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    color: var(--cor4);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent) ;
+    text-indent: 8px; /* para a primeira letra nao ficar grudada demais no bg color*/
+}
+
+main p { /*nao colocamos o sinal de maior, pois dentro de main ainda tem um article, quando eu deixo sem, significa que o paragrafo pode estar dentro de mais outras tags */
+
+    margin: 15px 0px; /* em cima e em baixo 15px e nas laterais 0 px */
+    text-align: justify;
+    text-indent: 30px; /*espacinho de paragrafo*/
+    font-size: 1em;
+    line-height: 1.2em; /*espaçamento entre linhas*/
+}
+
+main strong{
+    color: var(--cor4);
+    font-weight: bold;
+
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 5px;
+}
+
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor4);
+}
+
+main img{
+    width: 100%;
+}
+
+main img.pequena {
+    max-width: 350px; /*delimitamos uma largura maxima para a imagem nao crescer muito para nao perder a resolução */
+    display: block;
+    margin: auto;
+}
+
+.video{ /* criamos uma div para o video */
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px; /* para a margem colar nas bordas, colocamos em negativo */
+    padding: 20px;
+    position: relative;
+    padding-bottom: 57%;
+}
+
+.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+
+
+
+}
+
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.733);
+}
+
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 5px;
+    margin: -10px -10px 0px -10px; /*margem negativa, cima direita e esquerda, crescemo para fora*/
+    border-radius: 10px 10px 0px 0px;
+    
+}
+
+aside > ul{
+    list-style-type: '\1F5F8\00a0'; /*colocamos a barra antes do codigo do check, e o 00a0 é um espaço sem quebra */
+    list-style-position: inside; /*as bolinhas para o lado de dentro*/
+    columns: 2; /* divir a lista em 2 colunas */
+
+} 
+
+footer > p > a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor1);
+}
